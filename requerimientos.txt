@@ -1,0 +1,19 @@
+ELEMENTOS: 
+	NAVE DE JUGADOR 
+		Disparar
+		Recibir daño
+		Sistema de vidas
+		Colisiones 
+		Respawn 
+		Captura (se puede implementar como efecto de invertir controles)
+		Moverse horizontalmente -- HECHO 
+	ENEMIGOS (PATRONES DE NAVES)
+		Aparecer en formacion 
+		Disparar
+		Movimiento
+		Ser destruidos 
+		Dar puntos
+		Armar distintos tipos 
+	SCORE 
+	BOSS
+	
