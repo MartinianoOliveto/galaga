@@ -13,4 +13,7 @@ class Enemigo{
     method desaparecer(){
         game.removeVisual(self)
     }
+    method colision(){
+        game.removeVisual(self)
+    }
 }

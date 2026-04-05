@@ -3,7 +3,6 @@ import proyectiles.*
 
 object jugador{
     var property vidas = 3 
-    var property score = 0 
     var property position = game.at(7,0)
 
     method image(){
@@ -18,4 +17,22 @@ WKO*/
         proyectil.agregar(self)
         proyectil.inicialiarColision()
     }
+    method colision(){
+        self.restarVida()
+/*Esto es una verificacion, se usa para redirigir el flujo de codigo*/
+        self.verificarVidas()
+    }
+//Methods relacionados con las vidas de la nave 
+   method restarVida(){
+        vidas = vidas - 1 
+   }
+   method estaViva(){
+        return vidas > 0 
+   }
+   method verificarVidas(){
+/*Aca quiero que, si no tiene mas vidas, pare el juego*/
+    if(! self.estaViva()){
+        game.stop()
+    }
+   }
 }

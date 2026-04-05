@@ -50,7 +50,7 @@ tener la misma firma siempre)
         self.position().y() + 1
     }
     override method chocar(objeto){
-        objeto.desaparecer()
+        objeto.colision()
         self.desaparecer()
     }
     override method desaparecer(){
@@ -70,7 +70,7 @@ class ProyectilEnemigo inherits Proyectil{
         self.position().y() - 1 
     }
     override method chocar(objeto){
-        objeto.desaparecer()
+        objeto.colision()
         self.desaparecer()
     }
     override method desaparecer(){
