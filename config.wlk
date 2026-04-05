@@ -1,20 +1,15 @@
 import jugador.* //importar modulo 
-
+import enemigos.*
 
 object config{
     method keybinds(){
         keyboard.d().onPressDo({derecha.mover(jugador)})    //moverse derecha
         keyboard.a().onPressDo({izquierda.mover(jugador)})    //moverse izquierda
-       // keyboard.f().onPressDo()    //disparar
+        keyboard.f().onPressDo({jugador.disparar()})    //disparar
        // keyboard.r().onPressDo()    //restart
     }
 }
 class Direccion{
-    /*method mover(jugador){
-        if(jugador.puedeMoverse(self.siguientePosicion(jugador.position()))){
-            jugador.position(self.siguientePosicion(jugador.position()))
-        }
-    }*/
     method mover(jugador){
         if(self.noHayBordeHacia()){
             jugador.position(self.siguientePosicion(jugador.position()))
