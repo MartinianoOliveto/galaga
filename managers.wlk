@@ -1,6 +1,3 @@
-
-
-
 class Manager{
     method mover()
     method limpiar()
@@ -41,4 +38,5 @@ relacionado que va a suceder en pantalla con ellos*/
     override method limpiar(){
         proyectiles.forEach({proyectil => proyectil.remove()})
     }
+
 }

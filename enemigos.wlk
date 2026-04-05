@@ -6,8 +6,8 @@ class Enemigo{
 
     method disparar(){
         const proyectil = new ProyectilEnemigo(position = self.position().y()-1)
-        proyectil.inicialiarColision()
-        proyectil.agregar(self)
+        managerProyectiles.agregar(proyectil)
+        proyectil.inicializarColision()
     }
     //Colision con objetos 
     method colision(){

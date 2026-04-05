@@ -14,7 +14,7 @@ object jugador{
 /*Aca lo que hago es crear una instancia de la clase ProyectilJgador, seteandole la posicion al momento 
 de instanciarlo. A lo que se refiere instanciar es, crear un objeto de una clase, pero este no va a ser un
 WKO*/
-        proyectil.agregar(self)
+        managerProyectiles.agregar(proyectil)
         proyectil.inicialiarColision()
     }
     //Coslision con objetos 

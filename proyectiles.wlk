@@ -38,11 +38,7 @@ tener la misma firma siempre)
     override method chocar(objeto){
         objeto.colision()
         managerProyectiles.remover(self) //Misma observacion que con los enemigos 
-        //self.desaparecer()
     }
-   /*override method desaparecer(){
-        game.removeVisual(self)
-    }*/
     override method inicializarColision(){
         game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
     }
@@ -60,9 +56,6 @@ class ProyectilEnemigo inherits Proyectil{
         objeto.colision()
         managerProyectiles.remover(self) //Misma observacion ue con los enemigos 
     }
-   /* override method desaparecer(){
-        self.desaparecer()
-    }*/
     override method inicializarColision(){
         game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
     }
