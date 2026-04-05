@@ -22,6 +22,15 @@ WKO*/
 /*Esto es una verificacion, se usa para redirigir el flujo de codigo*/
         self.verificarVidas()
     }
+    method restart(){
+        self.vidas(3)
+        self.position(game.at(7,0))
+        self.limpiarTablero()
+    }
+    method limpiarTablero(){
+        managerEnemigos.limpiar()
+        managerProyectiles.limpiar()
+    }
 //Methods relacionados con las vidas de la nave 
    method restarVida(){
         vidas = vidas - 1 

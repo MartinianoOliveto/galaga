@@ -4,9 +4,9 @@ import enemigos.*
 object config{
     method keybinds(){
         keyboard.d().onPressDo({derecha.mover(jugador)})    //moverse derecha
-        keyboard.a().onPressDo({izquierda.mover(jugador)})    //moverse izquierda
-        keyboard.f().onPressDo({jugador.disparar()})    //disparar
-       // keyboard.r().onPressDo()    //restart
+        keyboard.a().onPressDo({izquierda.mover(jugador)})  //moverse izquierda
+        keyboard.f().onPressDo({jugador.disparar()})        //disparar
+        keyboard.r().onPressDo({jugador.restart()})         //restart
     }
 }
 class Direccion{
