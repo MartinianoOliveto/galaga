@@ -1,3 +1,5 @@
+
+//podria hacer una clase manager y que hereden 
 object managerProyectiles{
 /*Este objeto de lo que se encarga es del comportamiento de todos los proyectiles, o sea de todo lo 
 relacionado que va a suceder en pantalla con ellos*/
@@ -26,7 +28,7 @@ clase abstracta que defina los comportamientos en comun de las posibles clases h
 redefine y si es necesario agrega tanto mensajes como atributos*/ 
     method mover(proyectil)
     method chocar(objeto)
-    method desaparecer()
+    //method desaparecer()
 /*Observacion: este mensaje de abajo, es el mismo para ambas clases entonces pensaras, bueno por que no 
 definis el comportamiento ahora? Bueno, por que si no dejaria de ser una clase abstracta, ya que esta no
 puede tener ningun comportamiento definido, entonces se perderia el concepto que quiero que veas de usar 
@@ -54,11 +56,12 @@ tener la misma firma siempre)
     }
     override method chocar(objeto){
         objeto.colision()
-        self.desaparecer()
+        managerProyectiles.remover(self) //Misma observacion que con los enemigos 
+        //self.desaparecer()
     }
-    override method desaparecer(){
+   /*override method desaparecer(){
         game.removeVisual(self)
-    }
+    }*/
     override method inicializarColision(){
         game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
     }
@@ -74,11 +77,11 @@ class ProyectilEnemigo inherits Proyectil{
     }
     override method chocar(objeto){
         objeto.colision()
-        self.desaparecer()
+        managerProyectiles.remover(self) //Misma observacion ue con los enemigos 
     }
-    override method desaparecer(){
+   /* override method desaparecer(){
         self.desaparecer()
-    }
+    }*/
     override method inicializarColision(){
         game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
     }

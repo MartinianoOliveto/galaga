@@ -10,19 +10,16 @@ object config{
     }
 }
 class Direccion{
-    method mover(jugador){
+    method mover(jugador)
+    method siguientePosicion(posicion)
+    method noHayBordeHacia 
+}
+object derecha inherits Direccion{
+    override method mover(jugador){
         if(self.noHayBordeHacia()){
             jugador.position(self.siguientePosicion(jugador.position()))
         }
     }
-    method siguientePosicion(posicion){
-        return 
-    }
-    method noHayBordeHacia(){
-        return 
-    }
-}
-object derecha inherits Direccion{
     override method siguientePosicion(posicion){
         return game.at(posicion.x() + 1, posicion.y())
     }
@@ -31,6 +28,11 @@ object derecha inherits Direccion{
     }
 }
 object izquierda inherits Direccion{
+    override method mover(jugador){
+        if(self.noHayBordeHacia()){
+            jugador.position(self.siguientePosicion(jugador.position()))
+        }
+    }
     override method siguientePosicion(posicion){
         return game.at(posicion.x() - 1, posicion.y())
     }

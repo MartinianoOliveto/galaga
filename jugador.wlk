@@ -17,6 +17,7 @@ WKO*/
         proyectil.agregar(self)
         proyectil.inicialiarColision()
     }
+    //Coslision con objetos 
     method colision(){
         self.restarVida()
 /*Esto es una verificacion, se usa para redirigir el flujo de codigo*/

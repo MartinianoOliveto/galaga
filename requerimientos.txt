@@ -1,15 +1,15 @@
 ELEMENTOS: 
 	NAVE DE JUGADOR 
-		Disparar
-		Recibir daño
-		Sistema de vidas
-		Colisiones 
+		Disparar --hecho
+		Recibir daño 
+		Sistema de vidas --hecho 
+		Colisiones --hecho 
 		Respawn 
 		Captura (se puede implementar como efecto de invertir controles)
 		Moverse horizontalmente -- HECHO 
 	ENEMIGOS (PATRONES DE NAVES)
 		Aparecer en formacion 
-		Disparar
+		Disparar --hecho 
 		Movimiento
 		Ser destruidos 
 		Dar puntos
