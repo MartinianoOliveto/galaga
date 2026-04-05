@@ -10,8 +10,6 @@ program galaga{
     game.cellSize(8)
     //Background 
     game.ground("background.png")
-    //Controles 
-    //Implementar
     //Visuals 
     game.addVisual(jugador)
     //keybinds 

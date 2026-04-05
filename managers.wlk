@@ -10,7 +10,7 @@ object managerEnemigos inherits Manager{
         enemigos.forEach({enemigo => enemigo.mover()})
     }
     method agregar(enemigo){
-        enemigo.add(enemigo)
+        enemigos.add(enemigo)
         game.addVisual(enemigo)
     }
     method remover(enemigo){
