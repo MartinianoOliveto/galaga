@@ -1,4 +1,4 @@
-import enemigos.*
+import managers.*
 import proyectiles.*
 
 object jugador{

@@ -1,24 +1,5 @@
+import managers.*
 
-//podria hacer una clase manager y que hereden 
-object managerProyectiles{
-/*Este objeto de lo que se encarga es del comportamiento de todos los proyectiles, o sea de todo lo 
-relacionado que va a suceder en pantalla con ellos*/
-    const proyectiles = [] // aca van a estar todos los proyectiles de la pantalla
-
-    method moverProyectiles(){
-        proyectiles.forEach({proyectil => proyectil.mover()})
-    }
-    method agregar(proyectil){
-        proyectiles.add(proyectil)
-        game.addVisual(proyectil)
-    }
-    method remover(proyectil){
-        proyectiles.remove(proyectil)
-    }
-    method limpiar(){
-        proyectiles.forEach({proyectil => proyectil.remove()})
-    }
-}
 class Proyectil{
 //Clase abstracta 
 /*Esto es una clase abstracta, se usa para definir mensajes sin ningun comportamiento, este ultimo lo van
