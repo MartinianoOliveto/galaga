@@ -11,8 +11,10 @@ object config{
 }
 
 object onTicks{
+    const tickP = game.tick(1000, {managerProyectiles.mover()}, true)
+    //aca voy a poner todos los ticks del juego como const y que arranquen con el method 
     method tick(){
-        const tickP = game.tick(1000, {managerProyectiles.mover()}, true)
         tickP.start()
     }
+    // ahora, cuando quiera reiniciar voy a parar todos los ticks 
 }

@@ -5,12 +5,6 @@ object jugador{
     var property vidas = 3 
     var property position = game.at(7,0)
 
-// Aca le voy a dar pos al proyectil, que es la del jugador + 1 en y 
-    method positionP(){
-        return game.at(self.position().x(), self.position().y() +1)
-    } 
-    
-
     method image(){
         return "jugador.png"
     }
@@ -23,7 +17,12 @@ WKO*/
         managerProyectiles.agregar(proyectil)
         proyectil.inicializarColision()
     }
-    //Coslision con objetos 
+// Aca le voy a dar pos al proyectil, que es la del jugador + 1 en y
+// Como es calculada, debo usar un method ademas de que la pos del jugador va a cambiar constantemente 
+    method positionP(){
+        return game.at(self.position().x(), self.position().y() +1)
+    } 
+//Coslision con objetos 
     method colision(){
         self.restarVida()
 /*Esto es una verificacion, se usa para redirigir el flujo de codigo*/
@@ -35,6 +34,7 @@ WKO*/
         self.limpiarTablero()
     }
     method limpiarTablero(){
+ // aca tendria que remover todos los ticks (por las dudas)
         managerEnemigos.limpiar()
         managerProyectiles.limpiar()
     }
@@ -46,6 +46,7 @@ WKO*/
         return vidas > 0 
    }
    method verificarVidas(){
+
 /*Aca quiero que, si no tiene mas vidas, pare el juego*/
     if(! self.estaViva()){
         game.stop()
