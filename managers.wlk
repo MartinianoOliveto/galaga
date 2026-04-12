@@ -34,6 +34,7 @@ relacionado que va a suceder en pantalla con ellos*/
     }
     method remover(proyectil){
         proyectiles.remove(proyectil)
+        game.removeVisual(proyectil)
     }
     override method limpiar(){
         proyectiles.forEach({proyectil => proyectil.remove()})

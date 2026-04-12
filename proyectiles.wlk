@@ -34,8 +34,12 @@ tener la misma firma siempre)
     const property image = "jugador-proyectil.png"
 
     override method mover(){
-        position = game.at(self.position().x(), self.position().y()+1)
-        //game.at no recibe una posicion completa, recibe un x e y 
+        if(! self.alBorde()){
+            position = game.at(self.position().x(), self.position().y()+1)
+            //game.at no recibe una posicion completa, recibe un x e y 
+        }else{
+            managerProyectiles.remover(self)
+        }
     }
     override method chocar(objeto){
         objeto.colision()
@@ -43,6 +47,9 @@ tener la misma firma siempre)
     }
     override method inicializarColision(){
         game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
+    }
+    method alBorde(){
+        return self.position().y() + 1 == game.height()
     }
 }
 class ProyectilEnemigo inherits Proyectil{
