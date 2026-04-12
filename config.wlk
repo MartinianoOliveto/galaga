@@ -1,6 +1,7 @@
 import jugador.* //importar modulo 
 import direcciones.*
 import managers.*
+import enemigos.*
 object config{
     method keybinds(){
         keyboard.d().onPressDo({derecha.mover(jugador)})    //moverse derecha
@@ -11,10 +12,13 @@ object config{
 }
 
 object onTicks{
-    const tickP = game.tick(1000, {managerProyectiles.mover()}, true)
+    const tickP = game.tick(250, {managerProyectiles.mover()}, true)
+    //esto funciona perfecto 
+    const spawnEnemigos = game.tick(10000, {patronHorizontal3.spawnearEnemigos()}, true)
     //aca voy a poner todos los ticks del juego como const y que arranquen con el method 
     method tick(){
         tickP.start()
+        spawnEnemigos.start()
     }
     // ahora, cuando quiera reiniciar voy a parar todos los ticks 
 }

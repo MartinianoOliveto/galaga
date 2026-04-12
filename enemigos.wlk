@@ -26,14 +26,20 @@ object patronHorizontal3{
 
     method spawnearEnemigos(){
         self.spawnearEnemigo(self.posicionInicial())
-        self.spawnearEnemigo(self.posicionInicial() + 1)
-        self.spawnearEnemigo(self.posicionInicial() -1)
+        self.spawnearEnemigo(game.at(posicionInicial.x()+1, posicionInicial.y()))
+        self.spawnearEnemigo(game.at(posicionInicial.x()-1, posicionInicial.y()))
     }
     method spawnearEnemigo(posicion){
-        const enemigo = new Enemigo(position = self.posicionInicial())
+        const enemigo = new Enemigo(position = posicion)
         managerEnemigos.agregar(enemigo)
     }
 }
+//Actualizacion: 
+/*el spawn de enemigos funciona hay que mejorar assets y mejorar los patrones de aparicion 
+lo siguiente a hacer es pensar como se puede seleccionar el patron de una lista, asi genera uno aleatorio y despues, cuando el 
+jugador haya eliminado todos los enemigos, seleccionar otro 
+lo que estoy pensando es, agregar un tick que verifique que la lista de enemigos sea vacia y cuando lo sea, spawnee otro patron 
+*/
 /*Falta modelar el comportamiento de los enemigos, por ejemplo la frecuencia de 
 disparo, frecuencia de movimiento frecuencia de spawn
-LO SIGUIENTE A HACER VA A SER LE COMPORTAMIENTO DE LOS ENEMIGOS*/
+LO SIGUIENTE A HACER VA A SER EL COMPORTAMIENTO DE LOS ENEMIGOS*/

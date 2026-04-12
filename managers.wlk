@@ -14,10 +14,12 @@ object managerEnemigos inherits Manager{
         game.addVisual(enemigo)
     }
     method remover(enemigo){
+        //primero saco el visual, despues lo elimino de la lista (por las dudas de si pierde la referencia)
+        game.removeVisual(enemigo) 
         enemigos.remove(enemigo)
     }
     override method limpiar(){
-        enemigos.forEach({enemigo => enemigo.remove()})
+        enemigos.forEach({enemigo => enemigo.remover()})
     }
 }
 object managerProyectiles inherits Manager{
