@@ -59,7 +59,7 @@ class ProyectilEnemigo inherits Proyectil{
     var property image = "enemigo-proyectil.png"
 
     override method mover(){
-        self.position().y() - 1 
+        ////IMPLEMENTAR CON LOS ENEMIGOS 
     }
     override method chocar(objeto){
         objeto.colision()
