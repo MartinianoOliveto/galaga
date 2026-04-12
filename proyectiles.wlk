@@ -1,4 +1,5 @@
 import managers.*
+import jugador.*
 
 class Proyectil{
 //Clase abstracta 
@@ -33,7 +34,7 @@ tener la misma firma siempre)
     const property image = "jugador-proyectil.png"
 
     override method mover(proyectil){
-        self.position().y() + 1
+        position = position.y() + 1
     }
     override method chocar(objeto){
         objeto.colision()
