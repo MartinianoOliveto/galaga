@@ -1,6 +1,6 @@
 import jugador.* //importar modulo 
 import direcciones.*
-
+import managers.*
 object config{
     method keybinds(){
         keyboard.d().onPressDo({derecha.mover(jugador)})    //moverse derecha
@@ -10,3 +10,9 @@ object config{
     }
 }
 
+object onTicks{
+    method tick(){
+        const tickP = game.tick(1000, {managerProyectiles.mover()}, true)
+        tickP.start()
+    }
+}

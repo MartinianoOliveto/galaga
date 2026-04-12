@@ -8,7 +8,7 @@ a definir las clases que hereden de la abstracta
 Generalmente los criterios que uso son, bueno si tengo muchas cosas que comparten un tipo, puedo hacer una 
 clase abstracta que defina los comportamientos en comun de las posibles clases hijas, despues cada una 
 redefine y si es necesario agrega tanto mensajes como atributos*/ 
-    method mover(proyectil)
+    method mover()
     method chocar(objeto)
     //method desaparecer()
 /*Observacion: este mensaje de abajo, es el mismo para ambas clases entonces pensaras, bueno por que no 
@@ -33,8 +33,9 @@ tener la misma firma siempre)
                             o sea cuando inicializo una instancia de esta clase*/
     const property image = "jugador-proyectil.png"
 
-    override method mover(proyectil){
-        position = position.y() + 1
+    override method mover(){
+        position = game.at(self.position().x(), self.position().y()+1)
+        //game.at no recibe una posicion completa, recibe un x e y 
     }
     override method chocar(objeto){
         objeto.colision()
@@ -50,7 +51,7 @@ class ProyectilEnemigo inherits Proyectil{
                             o sea cuando inicializo una instancia de esta clase*/
     var property image = "enemigo-proyectil.png"
 
-    override method mover(proyectil){
+    override method mover(){
         self.position().y() - 1 
     }
     override method chocar(objeto){

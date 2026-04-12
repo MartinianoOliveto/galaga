@@ -14,5 +14,6 @@ program galaga{
     game.addVisual(jugador)
     //keybinds 
     config.keybinds()
+    onTicks.tick()
     game.start() 
 }
