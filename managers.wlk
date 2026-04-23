@@ -21,6 +21,9 @@ object managerEnemigos inherits Manager{
     override method limpiar(){
         enemigos.forEach({enemigo => enemigo.remover()})
     }
+    method onTickDisparo(){
+       return game.tick(2500,{enemigos.forEach({enemigo => enemigo.disparar()})},true)
+    }
 }
 object managerProyectiles inherits Manager{
 /*Este objeto de lo que se encarga es del comportamiento de todos los proyectiles, o sea de todo lo 

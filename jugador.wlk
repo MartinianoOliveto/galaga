@@ -27,6 +27,7 @@ WKO*/
         self.restarVida()
 /*Esto es una verificacion, se usa para redirigir el flujo de codigo*/
         self.verificarVidas()
+        game.say(self, "Funciona")
     }
     method restart(){
         self.vidas(3)

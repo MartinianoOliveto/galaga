@@ -5,7 +5,7 @@ class Enemigo{
     var property image = "enemigo.png"
 
     method disparar(){
-        const proyectil = new ProyectilEnemigo(position = self.position().y()-1)
+        const proyectil = new ProyectilEnemigo(position = game.at(self.position().x(), self.position().y()-1))
         managerProyectiles.agregar(proyectil)
         proyectil.inicializarColision()
     }
@@ -31,6 +31,20 @@ object patronHorizontal3{
     }
     method spawnearEnemigo(posicion){
         const enemigo = new Enemigo(position = posicion)
+        managerEnemigos.agregar(enemigo)
+    }
+}
+
+
+
+object enemigoIndividual{
+    var property posicionInicial = game.center()
+
+    method spawnearEnemigos(){
+        self.spawnearEnemigo(self.posicionInicial())
+    }
+    method spawnearEnemigo(posicion){
+        const enemigo = new Enemigo(position =posicion)
         managerEnemigos.agregar(enemigo)
     }
 }

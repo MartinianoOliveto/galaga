@@ -59,7 +59,11 @@ class ProyectilEnemigo inherits Proyectil{
     var property image = "enemigo-proyectil.png"
 
     override method mover(){
-        ////IMPLEMENTAR CON LOS ENEMIGOS 
+        if(! self.alBorde()){
+            position = game.at(self.position().x(), self.position().y()-1)
+        }else{
+            managerProyectiles.remover(self)
+        }
     }
     override method chocar(objeto){
         objeto.colision()
@@ -67,5 +71,8 @@ class ProyectilEnemigo inherits Proyectil{
     }
     override method inicializarColision(){
         game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
+    }
+    method alBorde(){
+        return self.position().y() - 1 == 0 
     }
 }
