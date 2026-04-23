@@ -76,3 +76,6 @@ class ProyectilEnemigo inherits Proyectil{
         return self.position().y() - 1 == 0 
     }
 }
+// DESAPARECE ANTES DE LLEGAR AL BORDE = POSIBLE FIX -1 
+// ERROR EN LA COLISION PROYECTIL ENEMIGO NO ENTIENDE COLISION 
+// SE DEBE AL CHOQUE DE PROYECTILES ENEMIGO-JUGADOR 

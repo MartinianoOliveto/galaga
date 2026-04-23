@@ -3,7 +3,7 @@ import proyectiles.*
 
 object jugador{
     var property vidas = 3 
-    var property position = game.at(7,0)
+    var property position = game.at(7,1)
 
     method image(){
         return "jugador.png"
@@ -24,9 +24,9 @@ WKO*/
     } 
 //Coslision con objetos 
     method colision(){
-        self.restarVida()
+        //self.restarVida()
 /*Esto es una verificacion, se usa para redirigir el flujo de codigo*/
-        self.verificarVidas()
+        //self.verificarVidas()
         game.say(self, "Funciona")
     }
     method restart(){
