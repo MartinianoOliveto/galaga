@@ -11,22 +11,13 @@ object jugador{
 
     method disparar(){
         const proyectil = new ProyectilJugador(position = self.positionP())
-/*Aca lo que hago es crear una instancia de la clase ProyectilJgador, seteandole la posicion al momento 
-de instanciarlo. A lo que se refiere instanciar es, crear un objeto de una clase, pero este no va a ser un
-WKO*/
         managerProyectiles.agregar(proyectil)
         proyectil.inicializarColision()
     }
-// Aca le voy a dar pos al proyectil, que es la del jugador + 1 en y
-// Como es calculada, debo usar un method ademas de que la pos del jugador va a cambiar constantemente 
     method positionP(){
         return game.at(self.position().x(), self.position().y() +1)
     } 
-//Coslision con objetos 
     method colision(){
-        //self.restarVida()
-/*Esto es una verificacion, se usa para redirigir el flujo de codigo*/
-        //self.verificarVidas()
         game.say(self, "Funciona")
     }
     method restart(){
@@ -35,7 +26,6 @@ WKO*/
         self.limpiarTablero()
     }
     method limpiarTablero(){
- // aca tendria que remover todos los ticks (por las dudas)
         managerEnemigos.limpiar()
         managerProyectiles.limpiar()
     }

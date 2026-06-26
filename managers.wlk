@@ -22,7 +22,7 @@ object managerEnemigos inherits Manager{
         enemigos.forEach({enemigo => enemigo.remover()})
     }
     method onTickDisparo(){
-       return game.tick(2500,{enemigos.forEach({enemigo => enemigo.disparar()})},true)
+        return game.tick(2500,{enemigos.forEach({enemigo => enemigo.disparar()})},true)
     }
 }
 object managerProyectiles inherits Manager{
