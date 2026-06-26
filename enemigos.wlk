@@ -2,7 +2,7 @@ import managers.*
 import proyectiles.*
 class Enemigo{
     var property position 
-    var property image = "enemigo.png"
+    var property image = "nave-enemigo.png"
 
     method disparar(){
         const proyectil = new ProyectilEnemigo(position = game.at(self.position().x(), self.position().y()-1))

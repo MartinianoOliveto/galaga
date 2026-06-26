@@ -12,7 +12,7 @@ class Proyectil{
 
 class ProyectilJugador inherits Proyectil{
     var property position  
-    const property image = "jugador-proyectil.png"
+    const property image = "proyectil-jugador.png"
 
     override method mover(){
         if(! self.alBorde()){
@@ -34,7 +34,7 @@ class ProyectilJugador inherits Proyectil{
 }
 class ProyectilEnemigo inherits Proyectil{
     var property position   
-    var property image = "enemigo-proyectil.png"
+    var property image = "proyectil-enemigo.png"
 
     override method mover(){
         if(! self.alBorde()){
