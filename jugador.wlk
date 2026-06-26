@@ -6,7 +6,7 @@ object jugador{
     var property position = game.at(7,1)
 
     method image(){
-        return "jugador.png"
+        return "nave-jugador.png"
     }
 
     method disparar(){

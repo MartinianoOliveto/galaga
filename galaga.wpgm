@@ -1,17 +1,18 @@
 import jugador.*
 import config.*
-
+import hud.*
 
 program galaga{
     game.title("Galaga")
     //Dimensiones del tablero
-    game.height(15)
-    game.width(15)
-    game.cellSize(8)
+    game.height(16)
+    game.width(16)
+    game.cellSize(32)
     //Background 
-    game.ground("background.png")
+    game.boardGround("background.png")
     //Visuals 
     game.addVisual(jugador)
+    //game.addVisual(contadorVidas)
     //keybinds 
     config.keybinds()
     onTicks.tick()
