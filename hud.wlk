@@ -1,6 +1,10 @@
 import jugador.*
 object contadorVidas{
-
+    method text() = "" + jugador.vidas()
+    var property position = game.at(1,14)
+    method textColor(){
+        return "FFFFFFFF"
+    }
     
     
     

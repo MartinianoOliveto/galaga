@@ -9,7 +9,7 @@ program galaga{
     game.width(16)
     game.cellSize(32)
     //Background 
-    game.ground("background.png")
+    game.boardGround("background.png")
     //Visuals 
     game.addVisual(jugador)
     //game.addVisual(contadorVidas)
