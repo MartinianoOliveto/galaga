@@ -5,7 +5,9 @@ class Proyectil{
     method mover()
     method chocar(objeto)
 
-    method inicializarColision()
+    method inicializarColision(){
+        game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
+    }
 }
 
 class ProyectilJugador inherits Proyectil{
@@ -22,9 +24,6 @@ class ProyectilJugador inherits Proyectil{
     override method chocar(objeto){
         objeto.colision()
         managerProyectiles.remover(self) 
-    }
-    override method inicializarColision(){
-        game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
     }
     method alBorde(){
         return self.position().y() + 1 == game.height()
@@ -47,9 +46,6 @@ class ProyectilEnemigo inherits Proyectil{
     override method chocar(objeto){
         objeto.colision()
         managerProyectiles.remover(self) 
-    }
-    override method inicializarColision(){
-        game.onCollideDo(self, ({objeto => self.chocar(objeto)}))
     }
     method alBorde(){
         return self.position().y() - 1 == 0 
