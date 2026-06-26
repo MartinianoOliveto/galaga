@@ -1,14 +1,17 @@
 import jugador.*
 object contadorVidas{
-    method text() = "" + jugador.vidas()
-    var property position = game.at(1,14)
-    method textColor(){
-        return "FFFFFFFF"
+    var position = game.at(12,15)
+
+    method image(){
+        return "corazon" + jugador.vidas() + ".png"
     }
-    
-    
-    
-    
+    method position(){
+        return position 
+    }
+    method colision(){
+        
+    }
+
     /*method position(){
         return game.at(0,15)
     }

@@ -5,6 +5,7 @@ object jugador{
     var property vidas = 3 
     var property position = game.at(7,1)
 
+
     method image(){
         return "nave-jugador.png"
     }
@@ -18,6 +19,7 @@ object jugador{
         return game.at(self.position().x(), self.position().y() +1)
     } 
     method colision(){
+        self.restarVida()
         game.say(self, "Funciona")
     }
     method restart(){
